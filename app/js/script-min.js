@@ -1,0 +1,1 @@
+"use strict";$(function(){window.addEventListener("scroll",function(){if($(window).width()<1024){window.pageYOffset||document.scrollTop;console.log("asdsad"),$("#numbers").offsetTop()&&console.log($("#numbers").offsetTop())}})});

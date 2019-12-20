@@ -1,0 +1,914 @@
+
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<!--[if IE 8 ]><html dir="ltr" lang="ru" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html dir="ltr" lang="ru" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html dir="ltr" lang="ru">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="author" content="Дмитрий Сайтотворец" />
+	<meta name="copyright" content="Deathdrumer &copy; Web разработка" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no"> <!-- отключение автоопределения номеров для Safari (iPhone / IPod / IPad) и Android браузера -->
+	<meta http-equiv="x-rim-auto-match" content="none"> <!-- отключение автоопределения номеров для BlackBerry -->
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta http-equiv="cache-control" content="no-cache">	<meta http-equiv="expires" content="1">    <link rel="shortcut icon" href="public/images/favicon.png" type="image/png">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/plugins.css">
+    <link rel="stylesheet" href="./css/assets.css">
+    <link rel="stylesheet" href="./css/animate.min.css">
+
+    <script src="./js/plugins.min.js"></script>
+	<script src="./js/script.js"></script>
+    <!-- <script src="./js/assets/common.js"></script> -->
+    <script src="./js/assets/functions.js"></script>
+
+    <!-- <link rel="stylesheet" href="http://fluentrussia.shopdevelop.ru/public/css/assets.min.css">
+	<link rel="stylesheet" href="http://fluentrussia.shopdevelop.ru/public/css/plugins.min.css">
+    <link rel="stylesheet" href="http://fluentrussia.shopdevelop.ru/public/css/animate.min.css">
+
+	<script src="http://fluentrussia.shopdevelop.ru/public/js/plugins.min.js"></script>
+	<script src="http://fluentrussia.shopdevelop.ru/public/js/assets/functions.js"></script>
+	<script src="http://fluentrussia.shopdevelop.ru/public/js/assets/common.js"></script>
+
+    <link rel="stylesheet" href="http://fluentrussia.shopdevelop.ru/public/css/site.min.css">	<script src="http://fluentrussia.shopdevelop.ru/public/js/site.js"></script>     Если сайт на хостинге - выполнять функции -->
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<title>fluentrussia</title>
+</head>
+<body data-scroll-block="body" id="body">
+	<svg style="display:none;"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol viewBox="0 0 306 306" id="arrow" xmlns="http://www.w3.org/2000/svg"><path d="M94.3 0L58.7 35.7 175.9 153 58.7 270.3 94.3 306l153.1-153z"/></symbol><symbol viewBox="0 0 250 250" id="bag" xmlns="http://www.w3.org/2000/svg"><path d="M246 201.5l-.4-.6-.6-.5c-4.5-3.6-10.3-8-12.5-9.4-.9-1.5-3.9-8.7-6-15.9-1.7-5.8-7.1-13.8-9-16.5-.1-1-.3-3.6.2-8.9.8-8.3-3.6-48.9-4.8-59.3l1-.5 2.4-5.6c1.8-2.7 3.5-9 1.2-24.3-.5-3.7-1-6.8-1.4-9.6-1.7-12.6-2.4-17.3-5.9-20-4-3.1-25.4-9.7-31.7-10.4-1-.1-2.4-.2-3.9-.2-9.2 0-26.2 2.4-30.3 3.2 0 0-.6.1-2.7.1-4.5 0-12.5-.4-21-.8-9.7-.5-19.6-.9-26.2-.9-1.6 0-2.9 0-3.9.1-4.8.2-29.3 1-35.2 2.9-6.1 1.9-15.4 4.4-16.6 4.5-1.6 0-3 .3-18.1 13.5l-1.3 1.1-.2 1.7C16.6 72 16.8 73.7 17 74.5c.1.5.3 2.2.4 3.2v.2c2.1 19.3 2.9 21.9 6.9 22.5.8.1 4.1 1.1 7.4 2.2-4 10.3-10.2 26.9-10.2 32.3 0 6.4 1.4 21.7 2.3 25.4.4 1.7 1.4 3.4 2.4 5.2 1.5 2.6 2.2 4.2 2.3 4.9-2.9 3.6-4.2 11.1-4.7 15.7C8.6 196.5.5 204.1-.3 208.6c-1.3 7.5 4 12.5 4.3 12.7l.8.7 1 .3c.2.1 5.4 1.4 12.5 1.9 4.6.3 13.8-.5 21.1-1.2h.1c3.3-.3 6.8-.6 7.8-.6.8 0 5.8 1.3 8.8 2.1 9.9 2.6 23.6 6.1 31.9 6.1 1.3 0 2.5-.1 3.6-.3 6.7-1.2 30.2-1.6 47.3-1.8 6.1-.1 12.5-.2 16.4-.3 12.3-.4 25.5-3.9 29.3-5l1.9-.4c4.1-.8 17.3 2.8 25.3 5.6l.8.3h.8c23.2-1.4 24.5-1.8 25.1-2 3.7-1.2 9.2-9.8 9.9-11.2 2.9-4.4-.4-10.7-2.4-14zM116.4 40l.7 1 1.2.1c.3 0 .7.1 1 .1 2.2 0 3.4-1.1 4-1.9l1.8-2.7c4.6.5 9.2 1.3 12.4 1.8 3.4.6 4.8.8 5.7.8.5 0 .9.1 1.9.4 1.2.4 2.7.9 5.3 1.4 4.1.8 12.3 2.1 14.8 2.6l-1.3 3.9c-2.9 2.2-4.9 3.9-6.1 5.2-1.2 1.3-2.1 2.9-2.8 4.8h-4.1c-1.6 0-10.2-.4-14.8-.7l.3-.3c1.2-1.3 1.3-3.1.3-4.5-.8-1.1-2.5-2-4.8-1.2-1.3.3-2.5 1.4-2.5 3.5l-.2 1.8.7.4-1.1 2.9c-1.3-.3-2.6-.5-4-.5-2.7 0-18.5-1.5-27.5-2.4-2.2-.8-9-3-13.7-3.6-3.5-.4-6.5 1.3-8.6 2.4-2.5-4-8-6.9-12.2-8.6 1.2-1.6 2.7-3.5 4.2-4.7 3.6-3 13-4.6 18-5.1h4.6c-.2.3-.3.7-.3 1-.1.6-.2 2.4 1.9 3.7l.8.4.7.1h.6c2.9 0 4.2-1.8 4.4-3.4l.2-1.1-.5-.7c4.9-.1 10.3-.3 14.8-.8 1.2-.1 2.5-.2 3.9-.2v.1c-.8 1.2-.6 2.7.3 4zm58.5-11.9c1.2 0 2.1 0 2.8.1 2.1.3 5 1 8.3 1.9-1.1-.1-2.1-.1-3.1-.1-.8 0-1.9.1-3.1.4-.7.2-1.3.4-1.9.6l-1.2.5c-2.6 1.2-5.2 2.5-7.5 3.7l-2-.1c-1-.2-10.7-1.8-15.1-2.6-2-.4-3.2-.8-4.2-1.1-.4-.1-.8-.3-1.2-.4 4.7-.8 19.8-2.9 28.2-2.9zM61.7 35.4c-2.1 1.8-5.6 5.8-7.5 9.1-2 .9-3.9 1.9-5.9 2.8-2.1 1-4.6 2.3-7.1 3.7l-.4.2c-.4.3-1 .6-1.7 1.1-.8.6-1.5 1.4-2.1 2.3-.8 1.3-1.4 2.8-1.9 4.7-.6 2.6-.7 5.4-.5 8.5l.1 1.4h5.6l.1-1.4c.2-2.5.6-4.7 1.3-6.6.4-1 .8-1.8 1.2-2.3.2-.3.4-.4.5-.4.1-.1.6-.3.9-.4l.4-.1c2.3-.9 4.7-1.7 7-2.5 1.8-.6 3.8-1.2 5.8-1.9 4.6 1.6 10.1 4.8 10.5 6.1.1.2.1.4.2.6L66.4 67h-.2l-2.7 25.2L73 70.5l3.8-6.5c.9-.4 1.7-.8 2.5-1.3 1.2-.6 2.7-1.5 3.5-1.4 4.5.5 12.3 3.3 12.4 3.3l.9.2h.2c4.1.4 25 2.5 28.8 2.5 1.4 0 2.5.3 3.3.7.2.5.4 1 .6 1.6.5 1.6 1 3.4 1.5 5.3l3.7 15.8 2-16.1c.3-2.2.4-4.2.5-6.1 0-1 .1-2.1 0-3.4 6.1.3 12.9.6 14.5.6h4.5l2.2.2h.1c.5.3 1 .7 1.6 1.2 1.1.9 2.3 1.8 3.5 2.9l9.9 9-5.3-12.3c-.7-1.7-1.5-3.2-2.2-4.7-.5-1-1-1.7-1.5-2.4-.1-.1-.2-.3-.3-.5.2-.5.5-.9.8-1.2.7-.8 2.5-2.3 4.9-4.1l1.2.4.3-.9c.7 0 1.3.1 1.8.1.2 0 .5.1.7.1l1.2.3c.7.2 1.5.4 2.3.7 1.1.4 2.6.9 3.7 1.8.4.3 1.2.9 1.2 1.7l-.7 28.6 6.4-27.9c.3-1.4.2-2.9-.3-4.3-.4-1.1-1.1-2.2-2.1-3.2-1.6-1.7-3.5-2.9-4.9-3.8-.9-.5-1.8-1-2.5-1.3l-1.3-.7c-.6-.3-1.1-.5-1.7-.7-.2-.1-.4-.1-.6-.2l.5-1.5c2-1.5 4.2-3.3 6.4-4.9l1-.7.4-.2c.4-.2 1-.4 1.7-.6 1.3-.3 2.7-.6 4.3-.7l12.5-1.1c3.7 1.4 4.4 1.9 4.4 1.9.9 1 1.8 7.9 2.7 14.5l.1.4c.4 2.7.8 5.8 1.3 9.3 1.8 12.6.6 17.2.2 18.2l-.3.2-.7 1.5-1.2 2.7C203.1 86 186.3 95.4 182 97c-.9.4-3.5.8-7.7.8-6.3 0-12.7-.8-13.7-1.1-.7-.2-1.4-.3-2.2-.3-3 0-7.4 1.5-11.4 2.9-.7.3-2.6.9-3.1 1-.8 0-2.5.2-8.1.8-9 .9-24.2 2.5-28.4 2.5h-.4c-.7-.1-3.3-.5-17.9-.5-8.8 0-17.9.1-20.9.3H68c-5.2 0-24.6-6-26.6-6.9-2.3-1.4-10.3-3.7-12.9-4.5-.4-1.9-1.1-6.1-2.1-15.6-.3-2.5-.4-3.5-.5-4 0-1.9.9-12.8 2-25.3 6.1-5.3 11-9.3 12.6-10.4 3.5-.6 13.4-3.4 17.7-4.8 1.7-.5 7.1-1.1 13.7-1.5-3.8 1.3-7.6 2.8-10.2 5zm124.7 178.3l-.6.2c-3.1 1.1-18.1 5.2-30.2 5.6-3.8.1-9.8.2-16.2.3-18.4.3-41.3.6-48.7 2-3.5.6-12-.7-25.3-4l.1-.3-3-.7c-.3-.1-.9-.3-1.6-.9-.7-.5-1.4-1.2-2.3-2-1.4-1.4-2.7-3.1-4.4-5.2-2.7-3.6-5.2-7.5-7.7-11.9l-.7-1.2-5 2.6.6 1.3c2.2 4.9 4.5 9.2 6.9 13.3.2.4.5.8.7 1.2-.4-.1-.7-.1-1-.1-1.4 0-4.6.3-8.7.6h-.2c-6.3.6-15.7 1.4-19.7 1.1-4.3-.3-7.9-1-9.6-1.3-.6-.9-1.4-2.4-1.1-4.3.6-1.5 8.7-9 22.2-18.1l1.7-1.2.1-1.3 2.8-11.9c1.2.8 2.5 1.6 4 2.5 1.8 1 3.8 1.9 5.7 2.7 1 .4 2 .8 3 1.1l.5.2c.9.3 1.9.6 3 .8l1.4.2 1-5.5-1.3-.3c-.5-.1-1.1-.4-1.8-.7l-.4-.2c-.8-.4-1.6-.8-2.5-1.3-1.6-.9-3.2-1.9-4.7-3-1.7-1.2-3-2.3-4.2-3.4-.6-.6-1.1-1.2-1.4-1.7-.1-.1-.2-.2-.2-.3v-.1l-.9-20.9-2.9 12.6c-.5-.9-.9-1.7-1-2.1-.8-3.1-2.1-17.8-2.1-23.4 0-3.1 4.7-16.8 9.6-29.2 6.8 2.4 22.5 6.8 27.8 6.8h.6c2.8-.1 12-.3 20.5-.3 14.4 0 16.3.3 16.3.3.5.1 1.1.1 1.9.1 4.7 0 19.5-1.5 29.3-2.6h.2c2.4-.3 6.9-.7 7.3-.7 1.2 0 2.3-.4 5.6-1.5 2.1-.7 6.8-2.4 8.5-2.4 2.8.8 10.2 1.5 16 1.5 4.9 0 8.5-.4 10.8-1.3 3.4-1.3 12.4-6.2 20-10.4 2.5 22.9 4.9 48.5 4.4 53.9-.3 3.3-.5 6.1-.4 8.4-1 2.7-2.1 5.3-3.2 7.8-1.2 2.5-2.5 5.2-4.1 7.3-.4.5-.7.8-1 1-.6.4-1.1.8-1.7 1.2-1.1.7-2.3 1.5-3.8 2.4-1.3.8-2.6 1.5-3.9 2.2l-.8.4c-1 .6-2 1.1-3 1.4l-1.3.5 1.7 5.4 1.3-.4c1.4-.4 2.7-1 3.9-1.5l.8-.4c1.4-.6 2.9-1.3 4.3-2.1 1.6-.8 3-1.5 4.2-2.3.8-.5 1.5-.9 2.1-1.3.8-.5 1.6-1.2 2.5-2.1 2.3-2.6 3.9-5.3 5.7-8.4.2-.3.4-.7.6-1 1.9 3 4.3 7.1 5.1 10 2 7 5.9 18.9 9.7 20.8.6.3 4.9 3.5 11.1 8.4 1.4 2.4 2.1 4.5 2.2 5.2-1.2 2.1-4 5.4-5 6.5-2.6.3-11.9.9-21.8 1.5-2.3-.8-8.6-2.8-14.9-4.3 1.3-1.2 2.3-2.4 3.1-3.7.4-.7.8-1.4 1.1-2.2l.6-1.6c.4-1 .7-2 1.2-3.1.9-2.2 1.9-4.1 2.9-6l.7-1.2-4.8-3-.8 1.1c-1.3 1.9-2.6 3.9-3.8 6.2-.6 1.2-1.2 2.2-1.7 3.3l-.7 1.5c-.1.3-.3.6-.6.9-.9 1.2-2.2 2.2-4.2 3.2-.8.4-1.7.8-2.8 1.3-.3.1-.5.2-.8.3l-.1-.3-2.7 1.5zm2.5.6zM40 221.4z"/><path d="M80.9 43.8l-5.3-.2-.2.5h-1.5l.2 3.1c.1 1.7 1.4 3.6 4.6 3.6h1.5l.8-1c0-.1.1-.1.2-.2 1.7-1.8 1.2-3.5.5-4.6l-.8-1.2zm8.5 2.5c-1.4-.9-3.2-1.1-4.7-.3-1.2.6-2 1.8-2.1 3-.1 1.3.6 2.5 1.8 3.2l.6.4.7.1h.6c1.4 0 2.5-.4 3.4-1.2.8-.8 1.2-1.9 1.1-3l-.1-1.4-1.3-.8z"/></symbol><symbol viewBox="0 0 250 250" id="left" xmlns="http://www.w3.org/2000/svg"><path d="M46.4 125.038l16-16 109-109 32.2 32.1-92.9 92.9 92.9 92.9-32.2 32.1-109-109-16-16z"/></symbol><symbol viewBox="0 0 250 250" id="oil" xmlns="http://www.w3.org/2000/svg"><path d="M204 176.9c0-3.6-.3-8.6-1.4-14.5-2.1-11.5-6.1-19.7-8.4-24.1-3.2-6-7.1-12.2-12.5-19.3-2.5-3.3-5.1-6.7-7.6-9.9-1.8-2.2-3.5-4.5-5.2-6.7-3.6-4.6-7.3-9.7-10.3-15l-.5-.9c-.7-1.3-1.4-2.5-1.8-3.7-2.6-8.1-4.1-14.8-4.9-21.2-.1-1-.2-2-.3-3.2.3 0 .6 0 .9-.1 2.9-.3 5.2-2.3 5.9-5.1.4-1.6.4-3.2-.1-4.7-.7-2.7-2.6-4.7-5.2-5.5 1-4.6 2.1-8.9 3.5-12.8 1.2-3.6 2.5-6.2 4.2-8.3 1-1.3 2.1-2.7 3.1-4 .7-.9 1.4-1.8 2.1-2.6 1-1.3 2.2-2.8 3.1-4.4.5-.9.8-1.7 1-2.5.4-1.8-.1-3.5-1.4-4.8-.8-.8-1.5-1.2-2.5-1.6-2.3-1.1-4.8-1.4-4.8-1.4-1.6-.3-2.8-.3-3.7-.3-1.4 0-3.3 0-5.5.2-4.3.5-8 1.4-11.3 3-4.8 2.3-10.1 4.5-15.7 6.3-5.1 1.7-10.7 3.4-16.3 4-2.2.2-4 .1-5.7-.4-3.8-1.2-8.4-2.5-13.1-3.2-5.8-1.2-10.8-1.3-15.4-.4-6.5 1.2-11.9 4.2-16 8.8-5.6 6.3-8.8 14-9.4 23-.3 4.2.1 8.6 1.1 13 1.4 6.2 3.8 12.3 7.3 18.2 4.1 7 8.9 12.7 14.6 17.4 2.1 1.7 4 3.9 5.7 6.3 1.2 1.9 2.1 3.6 2.5 5.3.3 1.2.2 2.2-.3 3.2-.9 1.7-1.9 3.3-3 4.9-1.4 2-2.7 3.9-4.1 5.9-1.9 2.6-3.7 5.3-5.6 8-8.3 12-13.1 22.6-13.1 22.6-2.8 6.3-6.4 16.2-7.7 29.6 0 3.1 0 6.3.1 9.4.2 4.6.9 11.3 3.5 19 1.7 5 5 14.8 13.8 24 5.3 5.6 11.9 10.1 19.6 13.6 6 2.7 12.5 4.6 19.9 6 5.5 1 11.3 1.6 17.4 1.9 2.3.1 4.7.1 7.2.1 2.3 0 4.6 0 6.8-.1 11.8-.1 21-2.4 27-4.2 7.1-2.1 13.1-5 18.4-8.9 7.8-5.6 13.7-13.1 17.6-22.3 2.7-6.4 3.8-11.7 4.8-17.1.4-1.9 1-5.8 1.5-10.9.1-3.6.2-6.9.2-9.6zm-150.6 0c.1-5.4 1.1-10.8 2.8-16.7 1.9-6.4 4.8-13 8.8-20.1 3.9-6.9 8.5-13.5 12.6-19.2l1.2-1.6c2.1-2.9 4.2-5.9 6.1-9 .2-.3.4-.6.5-1 .1-.2.2-.5.4-.7 1.5-2.7 1.9-5.7 1-9-.7-2.7-2-5.4-3.9-8-2-2.8-4.4-5.4-7.2-7.7-3.6-3-6.8-6.6-9.9-11.1-4.2-6.1-7-12.2-8.6-18.7-1.1-4.5-1.5-8.6-1.1-12.8.6-6.6 2.9-12.4 6.8-17.1 3.4-4.1 7.7-6.5 13.2-7.4 1.6-.3 3.3-.4 5.1-.4 2.3 0 4.8.2 7.5.7 3.4.6 7.1 1.5 11.5 2.9 3 .9 6.2 1.2 9.9.7 7.5-1 14.7-3.4 20.7-5.6 4.4-1.6 8.6-3.4 12.7-5.3 2.5-1.2 5.4-2 8.7-2.3 3.2-.3 6.1-.2 8.8.4.2 0 .5.1.7.2-.1.2-.3.4-.4.6-1.4 1.9-2.9 3.8-4.4 5.6-3.7 4.3-6.4 9.3-8.2 15.2-1.5 4.8-2.5 8.8-3.2 12.5-2.2-.2-4.6-.4-7-.5-4.9-.3-10-.6-15.2-.4-3.1.1-6.4.3-10.3.7-2.1.2-4 .4-5.9.6-1-4.5-2.6-8.2-4.7-11.4-3.1-4.6-7.2-7.6-12.3-8.8-10.5-2.5-20.8 2.3-25.5 12-3 6.2-3.4 12.9-1.2 20 .9 2.8 2.1 5.5 3.7 7.9 3.6 5.4 7.3 9.8 11.5 13.4 3 2.7 5.8 4.4 8.8 5.5 1.9.7 3.7 1 5.4 1 1.7 0 3.3-.5 4.7-1.4 4-2.4 6.9-6 8.6-10.6 1-2.7 1.7-5.8 2-9.3.1-1 .2-2 .2-2.9.7-.1 1.5-.1 2.2-.2 1.2-.1 2.5-.2 3.7-.3 2-.2 4.1-.3 6.1-.5l2.8-.2c2.6-.2 5.3-.2 8.9 0 2.9.1 6 .4 9.3.7.8.1 1.7.2 2.5.2.1 5.6 1.2 11.1 2.4 16.2.7 3.2 1.6 6.3 2.5 9.4.6 2.2 1.6 4.4 2.9 6.7 2.7 4.9 6 9.9 10.8 16.2 1.9 2.5 3.9 5 5.9 7.5 2.4 3.1 4.8 6.1 7.2 9.2 4.9 6.3 8.7 12.2 11.7 17.8 4 7.3 6.6 14.4 8 21.6 1 5 1.4 10.1 1.3 15.6-.1 5.5-.4 10-.9 14.2-1 8.3-2.8 15-5.6 21.1-4.7 10.3-12.1 17.7-22.6 22.6-5.2 2.4-10.9 4.2-17.5 5.4-7 1.3-14.5 1.9-23.6 1.9-3.8 0-8.3-.2-12.7-.6-9.7-.9-18-2.8-25.4-5.8-7.5-3-13.6-6.9-18.7-12-6.1-6-10.3-13.3-13.1-22.1-1.4-4.5-2.3-9.1-2.8-14.2-.2-3.9-.3-7.7-.2-11.3zM96.1 55.3c1.1 1.7 2.8 2.7 4.8 2.9-.2 3.1-.6 5.7-1.4 8.1-.9 2.6-2 4.7-3.6 6.2-.4.4-.9.8-1.5 1.2l-.4.5c-.5.4-1.2.7-2.7.4-1.3-.3-2.7-.8-4.3-1.8-2.1-1.3-4.1-2.9-6.1-5-3.7-3.8-6.4-7.2-8.4-10.7-2.3-3.9-3.3-7.8-3.3-11.8.1-5.2 1.9-9.3 5.4-12.6 2.6-2.4 5.7-3.6 9.4-3.8h.6c3.3 0 6 .9 8.3 2.7 1.6 1.2 2.9 2.7 4 4.8 1.2 2.1 2.1 4.6 2.8 7.4-2 .7-3.4 2.1-4.3 4-1 2.3-.8 5.2.7 7.5zm54.7-4.2s0-.1 0 0c-.5-.1-.9-.1-1.4-.2-.6-.1-1.2-.2-1.7-.3-2.4-.3-5-.6-8.1-.9-3.4-.3-7.5-.6-11.5-.6h-.6c-3.2 0-6.4.3-9.5.5h-.1l-6.9.6-3.5.3c-1.8.2-3.6.3-5.3.5v-.5c.1-.1.2-.2.5-.2 5.6-.7 10.1-1.2 14.3-1.6 3.2-.2 6.4-.4 8-.4 7.3 0 12.8.4 17.2.7.8.1 1.6.1 2.4.2 1.7.1 3.4.3 5.2.4.3 0 .7.1.9.3.1.3.2.7.1 1.2z"/><path d="M61 202.8c4.3 11.8 11.8 21.1 22.2 27.6 6.1 3.8 12.9 6.5 20.8 8.3 6.9 1.5 14.2 2.3 22.3 2.3h.3c6.5 0 12.6-.5 18.4-1.5 6.2-1.1 11.7-2.7 16.8-5 13.5-6 22.8-16 27.7-29.5 2.1-5.8 3.3-12 3.7-19 .4-6.9 0-13.8-1.1-20.3-1.7-9.4-4.8-18.6-9.3-27.2-4.5-8.6-9.7-16-15.9-22.3-.8-.9-1.8-1.7-2.8-2.4-2.8-1.9-6-2.9-9.9-3.2-1.2-.1-2.3-.1-3.5 0-2.1.1-4 .9-5.9 2.4l-1.5 1.2c-.5.4-1.1.9-1.6 1.3-1.2.9-2.7 1.4-4.4 1.5-1.7 0-3.4-.4-5.2-1.5-.7-.4-1.3-.8-2-1.2-.6-.4-1.1-.7-1.7-1.1-4.4-2.7-9.3-3.3-14.5-1.9-2.5.7-4.7 1.8-6.7 2.7l-.2.1c-1.2.6-2.4 1.1-3.5 1.5-.8.3-1.7.3-2.6.1-2.9-.5-6.1-1-9.5-.9-4 .2-7.2 1.7-9.6 4.5-9.3 10.9-16.3 22.7-20.7 35-2.7 7.6-4.2 15.3-4.4 22.9-.1 2.8.1 5.8.5 9.6.8 5.7 2 11 3.8 16zm26.6-79c1-1.1 2.2-1.7 3.9-1.8 2.4-.2 4.8.1 6.7.4.3 0 .6.1.9.2l1.5.3c1.9.3 3.8 0 5.9-.7 1.4-.5 2.7-1.1 4-1.7l.5-.2c2-.9 3.7-1.7 5.6-2.2 2.9-.7 5.4-.4 7.8 1 .8.5 1.6 1 2.5 1.5.5.3 1.1.7 1.6 1 3 1.8 6 2.6 9.2 2.5 3.2-.1 6-1.1 8.3-2.8 1-.8 2-1.5 2.8-2.2 1.2-1 2.4-1.4 3.9-1.3 1.7.1 3.8.3 5.6 1.1 1.4.6 2.6 1.4 3.7 2.6 11.4 12.1 18.9 26.5 22.5 42.7 1.3 5.7 1.8 11.7 1.7 17.8-.1 7.7-1.2 14.4-3.4 20.4-4 11.2-11.6 19.6-22.5 24.8-4.8 2.3-10 4-16 5-5.7 1-11.6 1.5-17.6 1.5-7.1.1-13.5-.6-19.7-1.8-8.2-1.7-15-4.4-21-8.4-9-6-15.4-14.5-18.9-25.3-1.3-4.1-2.2-8.6-2.7-13.5-.4-3.9-.4-7.6-.1-11.1.4-4.6 1.4-9.4 2.9-14.1 2.7-8.7 6.9-17 12.7-25.5 2.3-3.6 4.9-7 7.7-10.2z"/></symbol><symbol viewBox="0 0 250 250" id="right" xmlns="http://www.w3.org/2000/svg"><path d="M203.6 125.038l-16 16-109 109-32.2-32.1 92.9-92.9-92.9-92.9L78.6.038l109 109 16 16z"/></symbol></svg> 	<header>
+	<div class="container">
+		<div class="drow header align-items-center justify-content-between mt-4 position-relative">
+			<div class="dcol-2 dcol-md-auto">
+				<div class="logo">
+                    <a href="/">
+                        <img src="http://fluentrussia.shopdevelop.ru/public/images/logo.svg" alt="">
+                    </a>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>    <div class="hamburger-menu">
+    <div class="container menu">
+        <div class="menu__lang collapse show pt-3">
+            <a class="active" href="#ru">RU</a> /
+            <a href="#en">EN</a>
+            <i class="ml-3 fa fa-bars" aria-hidden="true"></i>
+        </div>
+        <div class="collapse menu_nav desktop pt-3" id="menu_nav" style="">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-scroll-nav="about_us" data-scroll-hash="about_us">О нас</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-scroll-nav="everywhere" data-scroll-hash="everywhere">В любое время. В любом месте</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-scroll-nav="educational_services" data-scroll-hash="educational_services">Образовательные услуги</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-scroll-nav="partners" data-scroll-hash="partners">Клиенты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-scroll-nav="contacts" data-scroll-hash="contacts">Контакты</a>
+                </li>
+                <li class="nav-item">
+                    <i class="fa fa-times close-menu" aria-hidden="true"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="hamburger-menu-mobile menu_nav collapse">
+    <div class="container">
+        <div class="drow header align-items-center justify-content-between mt-4">
+            <div class="dcol-2 dcol-md-auto">
+                <div class="logo">
+                    <a href="/">
+                        <img src="http://fluentrussia.shopdevelop.ru/public/images/small_logo.svg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="close-menu-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" class="close-menu" height="12" viewBox="0 0 12 12"><g><g transform="rotate(45 6 6)"><path fill="#fa1100" d="M13 5H7v-6a1 1 0 0 0-2 0v6h-6a1 1 0 0 0 0 2h6v6a1 1 0 1 0 2 0V7h6a1 1 0 1 0 0-2"/></g></g></svg>
+            </div>
+        </div>
+
+        <ol class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#about_us">О нас</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#everywhere">В любое время. В любом месте</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#educational_services">Образовательные услуги</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#partners">Клиенты</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#contacts">Контакты</a>
+            </li>
+        </ol>
+
+        <div class="lang">
+            <a class="active" href="#ru">RU</a> /
+            <a href="#en">EN</a>
+        </div>
+    </div>
+</div>    <div class="mobilenavwrap"></div>
+<div class="mobilenav" id="mobileNavBlock">
+	<div class="mobilenav__close" id="mobileNavButtonClose"></div>
+
+	
+</div>	<main>			<section class="section banner"  id="banner"><marquee class="banner__bg-text" scrollamount="10">
+    FLUENTRUSSIA CORPORATE PROFILE
+</marquee>
+<div class="container">
+    <div class="banner__info">
+        <div class="banner__title">FLUENTRUSSIA</div>
+        <div class="banner__subtitle mb-4">Федеральная образовательная компания. </div>
+        <div class="banner__description mb-4">
+            Мы воплощаем идею о системе образования 
+            как непрерывном жизненном процессе, который 
+            способствует личному росту и открывает новые возможности.
+        </div>  
+<!--        <button type="button" class=" d-none d-md-block banner__button">Наши преимущества</button>-->
+    </div>
+</div></section>
+			<section class="section what_is_happening"  id="what_is_happening"><img src="http://fluentrussia.shopdevelop.ru/public/images/what_is_happening.png" alt=""></section>
+			<section class="section numbers"  id="numbers"><div class="container">
+    <div class="row numbers__row">
+        <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card__number counter" data-count="12">0</div>
+                    <p class="card__text">
+                        лет <br>
+                        работы.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card__number counter" data-count="10">0</div>
+                    <p class="card__text">
+                        представительств
+                        в городах России</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card__number counter" data-count="150">0</div>
+                    <p class="card__text">
+                        крупнейших корпораций –
+                        партнеров</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card__number counter" data-count="20000">0</div>
+                    <p class="card__text">
+                        студентов
+                        по всему миру</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="numbers__description">дистанционное обучение с преподавателями по всей России и за рубежом</div>
+    <div class="row numbers__row">
+        <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card__number counter" data-count="500">0</div>
+                    <p class="card__text">
+                        преподавателей,
+                        из них100 преподавателей - носителей</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card__number counter" data-count="20">0</div>
+                    <p class="card__text">
+                        коммуникативных каналов по ежедневной
+                        практике Английского языка</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card__number counter" data-count="200">0</div>
+                    <p class="card__text">
+                        менторов, курирующих
+                        обучение</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card__number counter" data-count="40">0</div>
+                    <p class="card__text">
+                        англоговорящих
+                        сообществ</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var target = $('.numbers');
+    var targetPos = target.offset().top;
+    var winHeight = $(window).height();
+    var scrollToElem = targetPos - winHeight;
+    var start = false;
+    $(window).scroll(function(){
+        if($(this).scrollTop() > scrollToElem && !start){
+            start = true;
+            const element =  document.querySelector('.numbers')
+            element.classList.add('animated', 'flipInY')
+            $('.counter').each(function() {
+                var $this = $(this),
+                    countTo = $this.attr('data-count');
+                $({ countNum: $this.text()}).animate({
+                        countNum: countTo
+                    },
+                    {
+                        duration: 3000,
+                        easing:'linear',
+                        step: function() {
+                            $this.text(Math.floor(this.countNum));
+                        },
+                        complete: function() {
+                            $this.text(this.countNum);
+                        }
+                    });
+            });
+        }
+    });
+</script>
+</section>
+			<section class="section everywhere"  id="everywhere"><div class="container position-relative" data-scroll-block="everywhere">
+    <h1 class="col-lg-8 offset-lg-2 everywhere__title">
+        В любое время.<br>
+        В любом месте
+    </h1>
+    <div class="row everywhere__item col-md-12">
+        <div class="col-md-6 everywhere__item__image">
+            <img src="http://fluentrussia.shopdevelop.ru/public/images/everywhere/1.png" alt="">
+        </div>
+        <div class="col-md-6 everywhere__item__info">
+            <div class="everywhere__item__title mb-4">
+                Очный формат
+            </div>
+            <div class="everywhere__item__description">
+                <p>
+                    Мы создали себе репутацию компании, которая переходит на цифровые технологии
+                    и виртуальное обучение иностранным языкам
+                    и коммуникативным навыкам.
+                </p>
+                <br>
+                <p>
+                    И все же мы убеждены, что очное обучение
+                    по-прежнему является ценным и важным.
+                    FLUENTRUSSIA – единственная образовательная компания в России, которая может стать партнером национального масштаба. Мы предлагаем очное обучение более чем в 30 городах.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row everywhere__item col-md-12">
+        <div class="col-md-6 everywhere__item__image d-md-none">
+            <img src="http://fluentrussia.shopdevelop.ru/public/images/everywhere/2.png" alt="">
+        </div>
+        <div class="col-md-6 everywhere__item__info">
+            <div class="everywhere__item__title mb-4">
+                ДИСТАНЦИОННЫЕ КУРСЫ
+            </div>
+            <div class="everywhere__item__description">
+                <p>
+                    Обучаясь с FLUENTRUSSIA, вы можете заниматься под руководством самых талантливых преподавателей и коучей России, находясь при этом в любой точке Земли.
+                </p>
+                <br>
+                <p>
+                    Эту возможность обеспечивают собственные цифровые платформы FLUENTRUSSIA, а также удобные студенту сервисы: Skype, социальные сети, мессенджеры, телефон.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6 everywhere__item__image d-none d-md-inline-block">
+            <img src="http://fluentrussia.shopdevelop.ru/public/images/everywhere/2.png" alt="">
+        </div>
+    </div>
+    <div class="row everywhere__item col-md-12">
+        <div class="col-md-6 everywhere__item__image">
+            <img src="http://fluentrussia.shopdevelop.ru/public/images/everywhere/3.png" alt="">
+        </div>
+        <div class="col-md-6 everywhere__item__info">
+            <div class="everywhere__item__title mb-4">
+                DIGITAL
+            </div>
+            <div class="everywhere__item__description">
+                <p>
+                    FR Digital – это интерактивный онлайн-сервис для самостоятельного обучения. Студенты могут заниматься в своем темпе
+                    без преподавателей и поддержки наставников
+                    или инструкторов.
+                </p>
+                <br>
+                <p>
+                    Платформа – содержит базу теоретических материалов, интерактивные сервисы
+                    для практики, подборки лучших книг
+                    и фильмов на английском языке. А также открывает доступ к непрерывному общению на английском – в чатах, на вебинарах
+                    и онлайн мастер-классах.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="/calendar" class="what_is_happening__tab">
+    What’s happening
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14"><g><g transform="rotate(90 9 7)"><path d="M15.713 5.707c-.2.19-.45.29-.71.29-.26 0-.51-.1-.71-.29l-4.29-4.3v13.59c0 .55-.45 1-1 1s-1-.45-1-1V1.407l-4.29 4.3c-.39.39-1.03.39-1.42 0-.39-.39-.39-1.03 0-1.42l6-6c.09-.09.2-.16.32-.21.05-.02.09-.04.14-.04.16-.05.34-.05.5 0 .05 0 .09.02.14.04.12.05.23.12.32.21l6 6c.39.39.39 1.03 0 1.42"/></g></g></svg>
+</a></section>
+			<section class="section educational_services"  id="educational_services"><div class="educational_services_container" id="education_hor_scroll">
+    <div class="educational_services__chapter p-3">
+        <div class="educational_services__title">Образовательные услуги</div>
+        Преимущества,<br>
+        которые<br>
+        вы получите<br>
+        с FLUENTRUSSIA<br>
+    </div>
+
+    <div class="educational_services__info p-3">
+        <div class="educational_services__image d-md-none">
+            <img src="http://fluentrussia.shopdevelop.ru/public/images/educational_services/1.png" alt="">
+        </div>
+        <div>
+            <div class="educational_services__info__title mb-3">
+                Иностранные<br>
+                языки
+            </div>
+            <div class="educational_services__description">
+                Более 10 лет мы ведем обучение английскому языку в России. Эффективность уникальных методик
+                FLUENTRUSSIA оценили
+                уже более 10 000 студентов. Более 140 корпораций предпочитают обучать у нас своих специалистов
+                навыкам коммуникации на английском.
+                <p class="red mt-3 mb-3">
+                    выбрать курс
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14">
+                        <g>
+                            <g transform="rotate(90 9 7)">
+                                <path fill="#FA1100"
+                                      d="M15.713 5.707c-.2.19-.45.29-.71.29-.26 0-.51-.1-.71-.29l-4.29-4.3v13.59c0 .55-.45 1-1 1s-1-.45-1-1V1.407l-4.29 4.3c-.39.39-1.03.39-1.42 0-.39-.39-.39-1.03 0-1.42l6-6c.09-.09.2-.16.32-.21.05-.02.09-.04.14-.04.16-.05.34-.05.5 0 .05 0 .09.02.14.04.12.05.23.12.32.21l6 6c.39.39.39 1.03 0 1.42"/>
+                            </g>
+                        </g>
+                    </svg>
+                </p>
+            </div>
+        </div>
+        <div class="educational_services__image d-none d-md-block">
+            <img src="http://fluentrussia.shopdevelop.ru/public/images/educational_services/1.png" alt="">
+        </div>
+    </div>
+    <div class="educational_services__info p-3">
+        <div class="educational_services__image">
+            <img src="http://fluentrussia.shopdevelop.ru/public/images/educational_services/2.png" alt="">
+        </div>
+        <div>
+            <div class="educational_services__info__title mb-3">
+                Внеклассное обучение
+                и программы выходного
+                дня для детей и подростков
+            </div>
+            <div class="educational_services__description">
+                FR предлагает программы внеклассного обучения
+                и выходного дня по следующим направлениям: иностранные языки, математика, компьютерное программирование
+                и жизненные навыки. Наши курсы разработаны Школой №31 в г. Челябинске, отмеченной несколькими наградами, совместно с ведущими специалистами по образованию
+                из России и других стран.
+                <p class="red mt-4 mb-3">
+                    выбрать курс
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14">
+                        <g>
+                            <g transform="rotate(90 9 7)">
+                                <path fill="#FA1100"
+                                      d="M15.713 5.707c-.2.19-.45.29-.71.29-.26 0-.51-.1-.71-.29l-4.29-4.3v13.59c0 .55-.45 1-1 1s-1-.45-1-1V1.407l-4.29 4.3c-.39.39-1.03.39-1.42 0-.39-.39-.39-1.03 0-1.42l6-6c.09-.09.2-.16.32-.21.05-.02.09-.04.14-.04.16-.05.34-.05.5 0 .05 0 .09.02.14.04.12.05.23.12.32.21l6 6c.39.39.39 1.03 0 1.42"/>
+                            </g>
+                        </g>
+                    </svg>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="educational_services__info p-3">
+        <div class="educational_services__image d-md-none">
+            <img src="http://fluentrussia.shopdevelop.ru/public/images/educational_services/1.png" alt="">
+        </div>
+        <div>
+            <div class="educational_services__info__title mb-3">
+                Повышение
+                квалификации
+            </div>
+            <div class="educational_services__description">
+                Наставники программ повышения квалификации – состоявшиеся профессионалы, авторитетные в своих сферах лидеры, которые по праву берут на себя ответственность
+                быть вашими гидами на пути к успеху.
+                <p class="red mt-3 mb-3">
+                    выбрать курс
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14">
+                        <g>
+                            <g transform="rotate(90 9 7)">
+                                <path fill="#FA1100"
+                                      d="M15.713 5.707c-.2.19-.45.29-.71.29-.26 0-.51-.1-.71-.29l-4.29-4.3v13.59c0 .55-.45 1-1 1s-1-.45-1-1V1.407l-4.29 4.3c-.39.39-1.03.39-1.42 0-.39-.39-.39-1.03 0-1.42l6-6c.09-.09.2-.16.32-.21.05-.02.09-.04.14-.04.16-.05.34-.05.5 0 .05 0 .09.02.14.04.12.05.23.12.32.21l6 6c.39.39.39 1.03 0 1.42"/>
+                            </g>
+                        </g>
+                    </svg>
+                </p>
+            </div>
+        </div>
+        <div class="educational_services__image d-none d-md-block">
+            <img src="http://fluentrussia.shopdevelop.ru/public/images/educational_services/1.png" alt="">
+        </div>
+    </div>
+    <div class="educational_services__info p-3">
+        <div class="educational_services__image">
+            <img src="http://fluentrussia.shopdevelop.ru/public/images/educational_services/2.png" alt="">
+        </div>
+        <div>
+            <div class="educational_services__info__title mb-3">
+                ПРОФЕССИОНАЛЬНЫЙ
+                АНГЛИЙСКИЙ И БИЗНЕС-ТРЕНИНГИ
+            </div>
+            <div class="educational_services__description">
+                В числе наших наставников – специалисты с международным опытом работы. В их багаже – практика в бизнес-структурах, органах государственной власти, общественных организациях. За плечами каждого – собственный путь
+                к успеху.
+                <p class="red mt-3 mb-3">
+                    выбрать курс
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14">
+                        <g>
+                            <g transform="rotate(90 9 7)">
+                                <path fill="#FA1100"
+                                      d="M15.713 5.707c-.2.19-.45.29-.71.29-.26 0-.51-.1-.71-.29l-4.29-4.3v13.59c0 .55-.45 1-1 1s-1-.45-1-1V1.407l-4.29 4.3c-.39.39-1.03.39-1.42 0-.39-.39-.39-1.03 0-1.42l6-6c.09-.09.2-.16.32-.21.05-.02.09-.04.14-.04.16-.05.34-.05.5 0 .05 0 .09.02.14.04.12.05.23.12.32.21l6 6c.39.39.39 1.03 0 1.42"/>
+                            </g>
+                        </g>
+                    </svg>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="educational_services__info p-3">
+        <div class="educational_services__image d-md-none">
+            <img src="http://fluentrussia.shopdevelop.ru/public/images/educational_services/1.png" alt="">
+        </div>
+        <div>
+            <div class="educational_services__info__title mb-3">
+                Жизненные
+                навыки
+            </div>
+            <div class="educational_services__description">
+                Детям и подросткам необходимо прочное чувство собственного “я”. Им также необходимо знать,
+                как преодолеть множество трудностей, с которыми
+                они столкнутся в жизни, и реализовать свои возможности. Динамичные, энергичные курсы и мастер-классы предлагают множество видов деятельности, которые помогут научиться этим важным жизненным навыкам.
+                <p class="red mt-3 mb-3">
+                    выбрать курс
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14">
+                        <g>
+                            <g transform="rotate(90 9 7)">
+                                <path fill="#FA1100"
+                                      d="M15.713 5.707c-.2.19-.45.29-.71.29-.26 0-.51-.1-.71-.29l-4.29-4.3v13.59c0 .55-.45 1-1 1s-1-.45-1-1V1.407l-4.29 4.3c-.39.39-1.03.39-1.42 0-.39-.39-.39-1.03 0-1.42l6-6c.09-.09.2-.16.32-.21.05-.02.09-.04.14-.04.16-.05.34-.05.5 0 .05 0 .09.02.14.04.12.05.23.12.32.21l6 6c.39.39.39 1.03 0 1.42"/>
+                            </g>
+                        </g>
+                    </svg>
+                </p>
+            </div>
+        </div>
+        <div class="educational_services__image d-none d-md-block">
+            <img src="http://fluentrussia.shopdevelop.ru/public/images/educational_services/1.png" alt="">
+        </div>
+    </div>
+    <div class="educational_services__info p-3">
+        <div class="educational_services__image">
+            <img src="http://fluentrussia.shopdevelop.ru/public/images/educational_services/2.png" alt="">
+        </div>
+        <div>
+            <div class="educational_services__info__title mb-3">
+                УЧЕБНЫЕ
+                ТУРЫ
+            </div>
+            <div class="educational_services__description">
+                Мы убеждены – путешествия способны изменить жизнь.
+
+                Путешествие само по себе – захватывающий процесс познания. А если на этом пути вас сопровождает опытный наставник, помогающий глубже постичь нюансы языка, менталитета, культуры, который поддержит вас на пути преодоления трудностей – пара недель путешествия обогатит вас, как целая жизнь.
+                <p class="red mt-3 mb-3">
+                    выбрать курс
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14">
+                        <g>
+                            <g transform="rotate(90 9 7)">
+                                <path fill="#FA1100"
+                                      d="M15.713 5.707c-.2.19-.45.29-.71.29-.26 0-.51-.1-.71-.29l-4.29-4.3v13.59c0 .55-.45 1-1 1s-1-.45-1-1V1.407l-4.29 4.3c-.39.39-1.03.39-1.42 0-.39-.39-.39-1.03 0-1.42l6-6c.09-.09.2-.16.32-.21.05-.02.09-.04.14-.04.16-.05.34-.05.5 0 .05 0 .09.02.14.04.12.05.23.12.32.21l6 6c.39.39.39 1.03 0 1.42"/>
+                            </g>
+                        </g>
+                    </svg>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+
+</style>
+<script>
+    // using on
+    $('#education_hor_scroll').on('mousewheel', function(event) {
+        var p = $("#educational_services").scrollLeft();
+        $("#educational_services").scrollLeft(p-(event.deltaY * 100));
+        if(p != $("#educational_services").scrollLeft()){
+            event.preventDefault();
+        }
+        console.log(event.deltaX, event.deltaY, event.deltaFactor);
+    });
+
+    // $(function() {
+    //     var blockTop = $('.educational_services_container').offset().top;
+    //     var CountUpFlag = 0;
+    //     var $window = $(window);
+    //     $window.on('load scroll', function() {
+    //         var top = $window.scrollTop();
+    //         var height = $window.height();
+    //         if (top + height >= blockTop && CountUpFlag == 0) {
+    //             console.log(1111);
+    //             CountUp();
+    //             CountUpFlag = 1;
+    //         }
+    //     });
+    //     function CountUp() {
+    //         $('#animation').show();
+    //     }
+    // });
+</script>
+</section>
+			<section class="section partners"  id="partners"><div data-scroll-block="partners" class="partners_slider">
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/1.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/2.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/3.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/4.png" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/5.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/6.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/7.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/8.png" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/9.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/10.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/11.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/12.png" alt="">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/5.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/6.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/7.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/8.png" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/1.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/2.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/3.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/4.png" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/9.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/10.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/11.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/12.png" alt="">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/9.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/10.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/11.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/12.png" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/1.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/2.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/3.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/4.png" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/5.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/6.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/7.png" alt="">
+                </td>
+                <td>
+                    <img src="http://fluentrussia.shopdevelop.ru/public/images/partners/8.png" alt="">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script>
+    $('.partners_slider').slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 1,
+        centerMode: false,
+        arrows: false,
+    });
+</script>
+</section>
+			<section class="section contacts"  id="contacts"><div class="container" data-scroll-block="contacts">
+    <div class="row">
+        <div class="col-xl-10 offset-xl-1 col-12 row">
+            <div class="col-md-4 position-relative">
+                <div class="contacts__title">Контакты</div>
+                <div class="contacts__tabs">
+                    <ul class="nav flex-column" role="tablist">
+                        <li class="mb-2 nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#moscow">Москва</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="nav-link" data-toggle="tab" href="#tobolsk">Тобольск</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="nav-link" data-toggle="tab" href="#irkutsk">Иркутск</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contacts__email position-absolute d-none d-md-block">
+                    <span>Подпишитесь на нашу рассылку</span>
+                    <div class="input-group mb-3 mt-2">
+                        <input type="text" class="form-control" placeholder="Ваш E-mail" aria-label="Ваш E-mail">
+                        <div class="input-group-append email-arrow">
+                        <span class="input-group-text">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14"><g><g transform="rotate(90 9 7)"><path fill="#fa1100" d="M15.713 5.707c-.2.19-.45.29-.71.29-.26 0-.51-.1-.71-.29l-4.29-4.3v13.59c0 .55-.45 1-1 1s-1-.45-1-1V1.407l-4.29 4.3c-.39.39-1.03.39-1.42 0-.39-.39-.39-1.03 0-1.42l6-6c.09-.09.2-.16.32-.21.05-.02.09-.04.14-.04.16-.05.34-.05.5 0 .05 0 .09.02.14.04.12.05.23.12.32.21l6 6c.39.39.39 1.03 0 1.42"/></g></g></svg>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 pl-md-5 tab-content">
+                <div id="moscow" class="tab-pane active">
+                    <div class="contacts__map position-relative">
+                        <iframe width="100%" height="500" src="https://maps.google.com/maps?width=760&amp;height=500&amp;hl=en&amp;q=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%201-%D1%8F%20%D0%AF%D0%BC%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB.+(%D0%9D%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;"><small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by <a href=""></a> & <a href="https://iamsterdamcard.it">i amsterdamcard it</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+                    </div>
+                    <div class="contacts__address-title mt-4 mb-3">
+                        ПРИХОДИТЕ К НАМ В МОСКВЕ
+                    </div>
+                    <div class="row contacts__address">
+                        <div class="col-md-6 contacts__address_description mb-5">
+                            Ул. Сущевский Вал, д.43, строение 2,<br>
+                            Москва,<br>
+                            Россия
+                        </div>
+                        <div class="col-md-6 contacts__address_phone text-md-right mb-5">
+                            +7 (495) 969-87-46<br>
+                            infomoscow@fluentrussia.ru
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tobolsk" class="tab-pane fade">
+                    <div class="contacts__map position-relative">
+                        <iframe width="100%" height="500" src="https://maps.google.com/maps?width=760&amp;height=500&amp;hl=en&amp;q=%D0%A2%D0%BE%D0%B1%D0%BE%D0%BB%D1%8C%D1%81%D0%BA+(%D0%9D%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;"><small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by <a href="https://embedgooglemaps.com/de/">embedgooglemaps DE</a> & <a href="https://iamsterdamcard.it">www.iamsterdamcard.it</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+                    </div>
+                    <div class="contacts__address-title mt-4 mb-3">
+                        ПРИХОДИТЕ К НАМ В ТОБОЛЬСКЕ
+                    </div>
+                    <div class="row contacts__address">
+                        <div class="col-md-6 contacts__address_description mb-5">
+                            Ул. Сущевский Вал, д.43, строение 2,<br>
+                            Москва,<br>
+                            Россия
+                        </div>
+                        <div class="col-md-6 contacts__address_phone text-md-right mb-5">
+                            +7 (495) 969-87-46<br>
+                            infomoscow@fluentrussia.ru
+                        </div>
+                    </div>
+                </div>
+
+                <div id="irkutsk" class="tab-pane fade">
+                    <div class="contacts__map position-relative">
+                        <iframe width="100%" height="500" src="https://maps.google.com/maps?width=760&amp;height=500&amp;hl=en&amp;q=%D0%B8%D1%80%D0%BA%D1%83%D1%82%D1%81%D0%BA+(%D0%9D%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;"><small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by <a href="https://embedgooglemaps.com/de/">https://embedgooglemaps.com/de/</a> & <a href="https://iamsterdamcard.it">iamsterdamcard</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+                    </div>
+                    <div class="contacts__address-title mt-4 mb-3">
+                        ПРИХОДИТЕ К НАМ В ИРКУТСКЕ
+                    </div>
+                    <div class="row contacts__address">
+                        <div class="col-md-6 contacts__address_description mb-5">
+                            Ул. Сущевский Вал, д.43, строение 2,<br>
+                            Москва,<br>
+                            Россия
+                        </div>
+                        <div class="col-md-6 contacts__address_phone text-md-right mb-5">
+                            +7 (495) 969-87-46<br>
+                            infomoscow@fluentrussia.ru
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-10 offset-xl-1 col-12 row d-md-none small-email-block">
+            <div class="col-md-12 contacts__email pt-4">
+                <span>Подпишитесь на нашу рассылку</span>
+                <div class="input-group mb-3 mt-3">
+                    <input type="text" class="form-control w-100" placeholder="Ваш E-mail" aria-label="Ваш E-mail">
+                    <div class="input-group-append email-arrow">
+                    <span class="input-group-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14"><g><g transform="rotate(90 9 7)"><path fill="#fa1100" d="M15.713 5.707c-.2.19-.45.29-.71.29-.26 0-.51-.1-.71-.29l-4.29-4.3v13.59c0 .55-.45 1-1 1s-1-.45-1-1V1.407l-4.29 4.3c-.39.39-1.03.39-1.42 0-.39-.39-.39-1.03 0-1.42l6-6c.09-.09.2-.16.32-.21.05-.02.09-.04.14-.04.16-.05.34-.05.5 0 .05 0 .09.02.14.04.12.05.23.12.32.21l6 6c.39.39.39 1.03 0 1.42"/></g></g></svg>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></section>
+	</main>
+	<footer>
+	<div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="drow footer align-items-center align-content-evenly justify-content-sm-between">
+                    <div class="float-right">
+                        <p class="footer__label">Copyright 2019 © FLUENTRUSSIA</p>
+                    </div>
+                    <div class="float-left">
+                        <div>
+                            <div class="d-inline-block mr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29"><g><g opacity=".3"><path fill="#fff" d="M0 14.5C0 6.492 6.492 0 14.5 0S29 6.492 29 14.5 22.508 29 14.5 29 0 22.508 0 14.5zm16.011 8.526v-7.89h2.178l.289-2.718H16.01l.004-1.36c0-.71.067-1.09 1.086-1.09h1.361V7.25h-2.178c-2.616 0-3.537 1.319-3.537 3.537v1.632h-1.63v2.718h1.63v7.889z"/></g></g></svg>
+                            </div>
+                            <div class="d-inline-block mr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29"><g><g opacity=".3"><path fill="#fff" d="M0 14.5C0 6.492 6.492 0 14.5 0S29 6.492 29 14.5 22.508 29 14.5 29 0 22.508 0 14.5zm15.253 4.758s.279-.03.422-.18c.13-.139.126-.4.126-.4s-.017-1.217.558-1.396c.567-.177 1.295 1.177 2.068 1.697.583.394 1.026.308 1.026.308l2.065-.029s1.08-.065.568-.899c-.043-.068-.299-.617-1.535-1.744-1.295-1.18-1.121-.99.438-3.03.95-1.243 1.329-2.002 1.21-2.327-.113-.31-.811-.228-.811-.228l-2.324.014s-.172-.023-.3.052a.645.645 0 0 0-.206.245s-.367.962-.858 1.78c-1.035 1.726-1.448 1.817-1.618 1.71-.394-.25-.295-1.004-.295-1.539 0-1.673.258-2.37-.503-2.55-.252-.06-.438-.1-1.085-.107-.83-.008-1.53.003-1.928.194-.265.127-.47.41-.344.427.153.02.5.092.685.339.239.318.23 1.032.23 1.032s.137 1.97-.32 2.214c-.313.168-.742-.174-1.665-1.74-.473-.802-.83-1.69-.83-1.69s-.068-.165-.191-.254c-.15-.107-.357-.14-.357-.14l-2.208.013s-.332.01-.454.151c-.108.125-.008.386-.008.386s1.729 3.973 3.687 5.976c1.795 1.836 3.833 1.715 3.833 1.715z"/></g></g></svg>
+                            </div>
+                            <div class="d-inline-block mr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29"><g><g opacity=".3"><path fill="#fff" d="M14.5 11.922a2.578 2.578 0 1 0 0 5.156 2.578 2.578 0 0 0 0-5.156zm0-1.393a3.971 3.971 0 1 1 0 7.942 3.971 3.971 0 0 1 0-7.942zm4.129-1.085a.928.928 0 1 1 0 1.856.928.928 0 0 1 0-1.856zm-4.822-1.286c-1.441.002-1.718.012-2.431.044-.754.034-1.164.16-1.436.266a2.4 2.4 0 0 0-.89.58c-.27.27-.438.528-.578.889-.106.272-.232.681-.267 1.435-.037.816-.044 1.06-.044 3.124 0 2.066.007 2.31.044 3.126.035.754.16 1.163.267 1.435.14.361.308.618.578.889.271.27.529.438.89.578.273.106.682.232 1.436.267.815.037 1.06.045 3.125.045s2.31-.008 3.125-.045c.754-.034 1.163-.16 1.436-.266.36-.14.618-.308.888-.579.27-.27.439-.527.579-.888.106-.272.232-.682.266-1.436.037-.815.045-1.06.045-3.124s-.008-2.308-.045-3.124c-.034-.754-.16-1.163-.266-1.435a2.4 2.4 0 0 0-.579-.89 2.392 2.392 0 0 0-.888-.578c-.273-.106-.682-.232-1.436-.266-.816-.037-1.06-.045-3.125-.045h-.694zm.693-1.391c2.1 0 2.362.009 3.187.046.823.038 1.385.168 1.878.36.51.197.94.461 1.37.891.43.43.694.862.892 1.37.19.492.32 1.054.36 1.877.037.825.046 1.089.046 3.19 0 2.1-.01 2.362-.046 3.187-.04.823-.17 1.385-.36 1.877-.198.509-.462.94-.892 1.37-.43.43-.86.695-1.37.892-.491.192-1.054.322-1.877.36-.825.037-1.088.046-3.188.046s-2.364-.009-3.189-.046c-.823-.038-1.385-.168-1.877-.36a3.787 3.787 0 0 1-1.37-.892 3.79 3.79 0 0 1-.891-1.37c-.191-.492-.322-1.054-.36-1.877-.037-.825-.046-1.088-.046-3.188s.01-2.364.046-3.189c.037-.823.168-1.385.36-1.877.198-.508.462-.94.892-1.37.43-.43.861-.694 1.37-.891.492-.192 1.054-.322 1.877-.36.825-.037 1.088-.046 3.188-.046zM14.5 29C22.508 29 29 22.508 29 14.5S22.508 0 14.5 0 0 6.492 0 14.5 6.492 29 14.5 29z"/></g></g></svg>
+                            </div>
+                            <div class="d-inline-block mr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29"><g><g opacity=".3"><path fill="#fff" d="M0 14.5C0 6.492 6.492 0 14.5 0S29 6.492 29 14.5 22.508 29 14.5 29 0 22.508 0 14.5zm14.066-2.714l.03.502-.507-.062c-1.846-.235-3.459-1.034-4.828-2.375l-.67-.666-.172.491c-.365 1.096-.131 2.253.63 3.031.405.43.314.492-.386.236-.244-.082-.457-.144-.477-.113-.07.072.173 1.004.365 1.372.264.512.802 1.014 1.39 1.31l.497.236-.589.01c-.567 0-.588.01-.527.226.203.666 1.004 1.372 1.897 1.68l.629.214-.548.328a5.71 5.71 0 0 1-2.718.758c-.457.01-.832.05-.832.082 0 .102 1.237.675 1.957.9 2.16.666 4.727.38 6.654-.757 1.37-.809 2.738-2.417 3.377-3.973.345-.83.69-2.345.69-3.072 0-.47.03-.532.598-1.095.335-.328.65-.686.71-.789.102-.194.092-.194-.426-.02-.862.307-.983.266-.557-.195.314-.328.69-.921.69-1.096 0-.03-.153.02-.325.113-.183.102-.589.256-.893.348l-.547.174-.497-.338c-.274-.184-.66-.389-.863-.45-.517-.143-1.308-.123-1.775.04-1.267.462-2.069 1.65-1.977 2.95z"/></g></g></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+</footer>
+<script>
+    //menu
+    function closeNavBar(r) {
+        $('#menu_nav .nav').toggleClass('width');
+        setTimeout(()=> {
+            $('.menu_nav').toggleClass('collapsed');
+            $('.menu__lang').show();
+            $('html').toggleClass('open-navigation');
+        }, 90)
+    }
+    $(".menu__lang i").on('click', function(){
+        $('.menu__lang').hide(); 
+        $('.menu_nav').toggleClass('collapsed');
+        $('html').toggleClass('open-navigation');
+        setTimeout(() => $('#menu_nav .nav').toggleClass('width'))
+    });
+    $(".close-menu").on('click', function(){
+        closeNavBar()
+    });
+    $(".hamburger-menu-mobile .nav-link").on('click', function(){
+        closeNavBar();
+    });
+
+    function scrollbarWidth() {
+        var block = $('<div>').css({'height':'50px','width':'50px'}),
+            indicator = $('<div>').css({'height':'200px'});
+
+        $('body').append(block.append(indicator));
+        var w1 = $('div', block).innerWidth();
+        block.css('overflow-y', 'scroll');
+        var w2 = $('div', block).innerWidth();
+        $(block).remove();
+        return (w1 - w2);
+    }
+
+    var scrollWidth = scrollbarWidth();
+    var targetServices = $('#educational_services');
+    var servicesPos = targetServices.offset().top;
+    var happeningTab = $('.what_is_happening__tab');
+    var winHeight = $(window).height();
+    var scrollToServices = servicesPos - winHeight;
+    var startService = false;
+    $(window).scroll(function(){
+        if($(window).width()>767){
+            $('.menu__lang').show();
+            $('.menu_nav').removeClass('collapsed');
+            if(servicesPos && !startService && $(this).scrollTop() > scrollToServices){
+                startService = true;
+                happeningTab.addClass('absolute_tab');
+                happeningTab.css("right", scrollWidth);
+            }
+            if(servicesPos && startService && $(this).scrollTop() <= scrollToServices){
+                startService = false;
+                happeningTab.removeClass('absolute_tab');
+                happeningTab.css("right", 0);
+            }
+        }
+    });
+</script>
+</body>
+</html>
