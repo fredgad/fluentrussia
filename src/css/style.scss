@@ -1841,10 +1841,76 @@ header {
     padding-left: 200px;
     padding-left: initial;
     margin: 0 auto;
-    overflow: auto;
-    overflow-y: hidden;
-    overflow-x: auto
 }
+
+
+@media screen and (min-width: 1040px) {
+    #everywhere, #partners {
+        z-index: 9;
+    }
+    #educational_services { 
+        position: relative;
+        width: 100%;
+        min-height: 2000px;
+        display: block;
+    }
+    #second_educ {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 1;
+    }
+    #third_educ {
+        position: fixed;
+        position: -webkit-sticky;
+        position: sticky;
+        z-index: -1;
+        top: 0;
+        text-indent: 0px;
+        height: 100vh;
+
+        #educ-line {
+            position: absolute;
+            bottom: 0;
+            height: 5px;
+            width: 100vw;
+            background: rgba(255, 0, 0, .5);
+
+            #educ-point {
+                position: relative;
+                height: 5px;
+                width: 50px;
+                background: rgb(255, 0, 0);
+            }
+        }
+    }
+    #education_hor_scroll {
+        position: relative;
+        display: flex;
+        justify-self: center;
+        align-self: center;
+        will-change: transform;
+        transform-style: preserve-3d;
+        height: 700px;
+        min-width: 3000px;
+        // border: 2px solid red;
+        margin-left: 200px;
+        top: calc(50vh - 350px);
+        overflow: visible;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center; 
+    
+        > div {
+            position: relative;
+            min-width: 400px;
+        }
+    }
+}
+    
 
 @media screen and (min-width: 576px) {
     .everywhere__item__description {

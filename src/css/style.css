@@ -1777,9 +1777,72 @@ header {
   padding-left: 200px;
   padding-left: initial;
   margin: 0 auto;
-  overflow: auto;
-  overflow-y: hidden;
-  overflow-x: auto;
+}
+
+@media screen and (min-width: 1040px) {
+  #everywhere, #partners {
+    z-index: 9;
+  }
+  #educational_services {
+    position: relative;
+    width: 100%;
+    min-height: 2000px;
+    display: block;
+  }
+  #second_educ {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 1;
+  }
+  #third_educ {
+    position: fixed;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: -1;
+    top: 0;
+    text-indent: 0px;
+    height: 100vh;
+  }
+  #third_educ #educ-line {
+    position: absolute;
+    bottom: 0;
+    height: 5px;
+    width: 100vw;
+    background: rgba(255, 0, 0, 0.5);
+  }
+  #third_educ #educ-line #educ-point {
+    position: relative;
+    height: 5px;
+    width: 50px;
+    background: red;
+  }
+  #education_hor_scroll {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+    will-change: transform;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    height: 700px;
+    min-width: 3000px;
+    margin-left: 200px;
+    top: calc(50vh - 350px);
+    overflow: visible;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  #education_hor_scroll > div {
+    position: relative;
+    min-width: 400px;
+  }
 }
 
 @media screen and (min-width: 576px) {
